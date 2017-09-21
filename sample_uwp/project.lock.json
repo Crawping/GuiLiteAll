@@ -15640,16 +15640,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "E:\\Noodle\\GuiLiteDev\\sample_uwp\\sample_uwp.csproj",
+      "projectUniqueName": "E:\\Noodle\\develop\\GuiLiteAll\\sample_uwp\\sample_uwp.csproj",
       "projectName": "sample_uwp",
-      "projectPath": "E:\\Noodle\\GuiLiteDev\\sample_uwp\\sample_uwp.csproj",
-      "projectJsonPath": "E:\\Noodle\\GuiLiteDev\\sample_uwp\\project.json",
+      "projectPath": "E:\\Noodle\\develop\\GuiLiteAll\\sample_uwp\\sample_uwp.csproj",
+      "projectJsonPath": "E:\\Noodle\\develop\\GuiLiteAll\\sample_uwp\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "E:\\Noodle\\GuiLiteDev\\sample_uwp_dll\\sample.uwp.dll.vcxproj": {
-              "projectPath": "E:\\Noodle\\GuiLiteDev\\sample_uwp_dll\\sample.uwp.dll.vcxproj"
+            "E:\\Noodle\\develop\\GuiLiteAll\\sample_uwp_dll\\sample.uwp.dll.vcxproj": {
+              "projectPath": "E:\\Noodle\\develop\\GuiLiteAll\\sample_uwp_dll\\sample.uwp.dll.vcxproj"
             }
           }
         }

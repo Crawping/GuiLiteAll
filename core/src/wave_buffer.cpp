@@ -2,6 +2,10 @@
 #include "../core_include/wave_buffer.h"
 #include <string.h>
 #include <stdio.h>
+
+#define MAX(a,b) (((a)>(b))?(a):(b))
+#define MIN(a,b) (((a)<(b))?(a):(b))
+
 c_wave_buffer::c_wave_buffer()
 {
 	m_head = m_tail = m_min_old = m_max_old =

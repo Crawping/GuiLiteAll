@@ -6,13 +6,6 @@
 #define NULL 	0
 #define TRUE 	1
 #define FALSE 	0
-#define MAX(a,b) (((a)>(b))?(a):(b))
-#define MIN(a,b) (((a)<(b))?(a):(b))
-
-#define CORRECT(x, high_limit, low_limit)	{\
-	x = (x > high_limit) ? high_limit : x;\
-	x = (x < low_limit) ? low_limit : x;\
-}while(0)
 
 void do_assert(const char* file, int line);
 #define ASSERT(condition)	\

@@ -1,6 +1,9 @@
 #include "../core_include/rect.h"
 #include "../core_include/api.h"
 
+#define MAX(a,b) (((a)>(b))?(a):(b))
+#define MIN(a,b) (((a)<(b))?(a):(b))
+
 c_rect::c_rect(const c_rect& rect)
 {
 	SetRect(rect.m_left,rect.m_top,rect.m_right,rect.m_bottom);

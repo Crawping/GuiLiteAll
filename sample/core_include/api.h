@@ -6,13 +6,6 @@
 #define NULL 	0
 #define TRUE 	1
 #define FALSE 	0
-#define MAX(a,b) (((a)>(b))?(a):(b))
-#define MIN(a,b) (((a)<(b))?(a):(b))
-
-#define CORRECT(x, high_limit, low_limit)	{\
-	x = (x > high_limit) ? high_limit : x;\
-	x = (x < low_limit) ? low_limit : x;\
-}while(0)
 
 void do_assert(const char* file, int line);
 #define ASSERT(condition)	\
@@ -43,7 +36,7 @@ T_TIME second_to_day(long second);
 T_TIME get_time(void);
 T_TIME set_time(T_TIME ret);
 
-void start_real_timer(void (*func)(void* arg));
+void start_real_timer(void(*func)(void* arg));
 long int get_tick(void);
 unsigned int get_current_task_id(void);
 

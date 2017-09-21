@@ -146,7 +146,7 @@ int c_database::read(long start_time, long end_time, VALUE_SET* data_set, int le
 	{
 		ASSERT(FALSE);
 	}
-	return MIN(m_real_data_rd_cnt, m_real_data_rd_len);
+	return ((m_real_data_rd_cnt < m_real_data_rd_len) ? m_real_data_rd_cnt : m_real_data_rd_len);
 }
 
 int c_database::write(VALUE_SET &data_set)

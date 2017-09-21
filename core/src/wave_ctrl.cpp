@@ -10,6 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define CORRECT(x, high_limit, low_limit)	{\
+	x = (x > high_limit) ? high_limit : x;\
+	x = (x < low_limit) ? low_limit : x;\
+}while(0)
+
 #define WAVE_CURSOR_WIDTH			8
 #define SHORTAGE_TOLERANCE			4
 #define	WAVE_LINE_WIDTH				1
