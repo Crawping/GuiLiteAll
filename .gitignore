@@ -1,0 +1,41 @@
+#For Eclipse
+sample/Debug/source
+
+#For Gcc
+*.d
+*.o
+*.map
+*.mk
+
+#For cmake
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+Makefile
+bin
+core/libcore.a
+gui/libgui.a
+
+#For Visual studio
+.vs
+ipch
+*.suo
+Debug
+Release
+sample/Debug
+obj
+*.sdf
+*.opendb
+*.db
+*.dir
+*.user
+Generated Files
+AppPackages
+BundleArtifacts
+sample_native/libs/x86/*.a
+sample_native/*.wav
+sample/source/*.a
+
+#For output
+*.bmp
+dump.txt
