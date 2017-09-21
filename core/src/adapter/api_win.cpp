@@ -216,27 +216,6 @@ unsigned char check_sum(unsigned char* data, int len)
 	return sum&0xff;
 }
 
-//serial interface
-int uart_open(char* dev_file, unsigned int baudrate, unsigned int parity)
-{
-	return -1;
-}
-
-int uart_read(int fd, char* buffer, unsigned int size)
-{
-	return -1;
-}
-
-int uart_write(int fd, char* buffer, unsigned int size)
-{
-	return -1;
-}
-
-int uart_close(int fd)
-{
-	return -1;
-}
-
 void value_2_string(int value, char* text, int dot_position)
 {
 	if (XXX == value  )

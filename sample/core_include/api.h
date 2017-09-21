@@ -46,10 +46,6 @@ T_TIME set_time(T_TIME ret);
 void start_real_timer(void (*func)(void* arg));
 long int get_tick(void);
 unsigned int get_current_task_id(void);
-int uart_open(char* dev_file, unsigned int baudrate, unsigned int parity);
-int uart_close(int fd);
-int uart_read(int fd, char* buffer, unsigned int size);
-int uart_write(int fd, char* buffer, unsigned int size);
 
 void register_timer(int milli_second, void func(void* ptmr, void* parg));
 unsigned char check_sum(unsigned char* data, int len);
