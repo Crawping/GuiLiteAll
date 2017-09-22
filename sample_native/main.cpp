@@ -195,20 +195,22 @@ static void init_dump()
 static void* make_fb_shared_by_display_app(int shared_id)
 {
 	void* ret = NULL;
-	int shmid = shmget(shared_id, 0, SHM_R | SHM_W);
-	if (shmid >= 0)
+	while(ret == NULL)
 	{
-		ret = (unsigned char*)shmat(shmid, 0, 0);
-	}
-	else
-	{
-		printf("shmget failed! run display app first\n");
-		exit(-2);
-	}
-	if (NULL == ret)
-	{
-		printf("shmat failed! run display app first\n");
-		exit(-3);
+		int shmid = shmget(shared_id, 0, SHM_R | SHM_W);
+		if (shmid >= 0)
+		{
+			if(ret = (unsigned char*)shmat(shmid, 0, 0))
+			{
+				break;
+			}
+			printf("shmat failed! run display app first.\n");
+		}
+		else
+		{
+			printf("shmget failed! run display app first\n");
+		}
+		sleep(1);
 	}
 	return ret;
 }

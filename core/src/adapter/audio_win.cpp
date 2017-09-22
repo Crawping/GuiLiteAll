@@ -58,7 +58,7 @@ static int register_wav_resouce(AUDIO_TYPE type, wchar_t* wav_path)
 	void* hFile = CreateFile2(wav_path, GENERIC_READ, FILE_SHARE_READ, OPEN_EXISTING, NULL);
 	if (INVALID_HANDLE_VALUE == hFile)
 	{
-		ASSERT(FALSE);
+		log_out("Open wave file failed\n");
 		return -1;
 	}
 
