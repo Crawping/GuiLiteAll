@@ -46,7 +46,7 @@ void c_spin_box::pre_create_wnd()
 	m_bt_arrow_down_rect.m_bottom = m_bt_arrow_down_rect.m_top + ARROW_BT_HEIGHT;
 }
 
-void c_spin_box::handle_mouse_down_msg(int x, int y)
+void c_spin_box::on_touch_down(int x, int y)
 {
 	c_rect arrow_rect = m_wnd_rect;
 	arrow_rect.m_right = m_bt_arrow_down_rect.m_right;
@@ -56,12 +56,12 @@ void c_spin_box::handle_mouse_down_msg(int x, int y)
 	{//click spin box
 		if (STATUS_NORMAL == m_status)
 		{
-			get_parent()->set_focus(this, 0);
+			get_parent()->set_focus(this);
 		}
 	}
 	else if (TRUE == arrow_rect.PtInRect(x, y))
 	{//click arrow button
-        c_wnd::handle_mouse_down_msg(x, y);
+        c_wnd::on_touch_down(x, y);
 	}
 	else
 	{//click invalid place.
@@ -78,7 +78,7 @@ void c_spin_box::handle_mouse_down_msg(int x, int y)
 	}
 }
 
-void c_spin_box::handle_mouse_up_msg(int x, int y)
+void c_spin_box::on_touch_up(int x, int y)
 {
 	if (STATUS_FOCUSED == m_status)
 	{
@@ -100,12 +100,12 @@ void c_spin_box::handle_mouse_up_msg(int x, int y)
 		}
 		else
 		{//click arrow button.
-			c_wnd::handle_mouse_up_msg(x, y);
+			c_wnd::on_touch_up(x, y);
 		}
 	}
 }
 
-void c_spin_box::on_focus(unsigned int w_param)
+void c_spin_box::on_focus()
 {
 	modify_status(STATUS_FOCUSED);
 	on_paint();
@@ -168,7 +168,6 @@ void c_spin_box::on_paint(void)
 		m_surface->draw_custom_shape(rect.m_left, rect.m_top, rect.m_right, rect.m_bottom, m_parent->get_bg_color(), g_shape_listbox_push,m_parent->get_z_order());
 		m_font_color = GLT_RGB(2,124,165);
 		break;
-
 	case STATUS_FOCUSED:
 		if (m_z_order > m_parent->get_z_order())
 		{
@@ -181,7 +180,6 @@ void c_spin_box::on_paint(void)
 		draw_custom_shape(rect.m_left, rect.m_top, rect.m_right, rect.m_bottom, m_parent->get_bg_color(), g_shape_btn_focus);
 		m_font_color = GLT_RGB(255,255,255);
 		break;
-
 	case STATUS_NORMAL:
 		if (m_z_order > m_parent->get_z_order())
 		{

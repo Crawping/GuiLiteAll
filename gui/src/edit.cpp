@@ -43,7 +43,7 @@ void c_edit::set_text(const char* str)
 	}
 }
 
-void c_edit::handle_mouse_down_msg(int x, int y)
+void c_edit::on_touch_down(int x, int y)
 {
 	c_rect kb_rect_relate_2_edit_parent;
 	s_keyboard.get_wnd_rect(kb_rect_relate_2_edit_parent);
@@ -56,12 +56,12 @@ void c_edit::handle_mouse_down_msg(int x, int y)
 	{//click edit box
 		if (STATUS_NORMAL == m_status)
 		{
-			get_parent()->set_focus(this, 0);
+			get_parent()->set_focus(this);
 		}
 	}
 	else if (kb_rect_relate_2_edit_parent.PtInRect(x,y))
 	{//click key board
-        c_wnd::handle_mouse_down_msg(x, y);
+        c_wnd::on_touch_down(x, y);
 	}
 	else
 	{
@@ -73,7 +73,7 @@ void c_edit::handle_mouse_down_msg(int x, int y)
 	}
 }
 
-void c_edit::handle_mouse_up_msg(int x, int y)
+void c_edit::on_touch_up(int x, int y)
 {
 	if (STATUS_FOCUSED == m_status)
 	{
@@ -89,12 +89,12 @@ void c_edit::handle_mouse_up_msg(int x, int y)
 		}
 		else
 		{
-			c_wnd::handle_mouse_up_msg(x, y);
+			c_wnd::on_touch_up(x, y);
 		}
 	}
 }
 
-void c_edit::on_focus(unsigned int w_param)
+void c_edit::on_focus()
 {
 	modify_status(STATUS_FOCUSED);
 	on_paint();

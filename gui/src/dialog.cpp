@@ -48,11 +48,6 @@ void c_dialog::on_paint(void)
 	}
 }
 
-void c_dialog::bn_exit(unsigned int ctr_id)
-{
-	close_dialog();
-}
-
 c_dialog* c_dialog::get_the_dialog(c_surface* surface)
 {
 	for(int i = 0; i < MAX_DIALOG; i++)
@@ -121,7 +116,7 @@ int c_dialog::close_dialog()
 	return -1;
 }
 
-void c_dialog::handle_mouse_down_msg(int x, int y)
+void c_dialog::on_touch_down(int x, int y)
 {
 	c_wnd *child = m_top_child;
 	c_rect rect;
@@ -135,16 +130,16 @@ void c_dialog::handle_mouse_down_msg(int x, int y)
 			{
 				x -= rect.m_left;
 				y -= rect.m_top;
-				child->handle_mouse_down_msg(x, y);
+				child->on_touch_down(x, y);
 				return;
 			}
 			child = child->m_next_sibling;
 		}
 	}
-	c_wnd::handle_mouse_down_msg(x, y);
+	c_wnd::on_touch_down(x, y);
 }
 
-void c_dialog::handle_mouse_up_msg(int x, int y)
+void c_dialog::on_touch_up(int x, int y)
 {
 	c_wnd *child = m_top_child;
 	c_rect rect;
@@ -157,12 +152,12 @@ void c_dialog::handle_mouse_up_msg(int x, int y)
 			{
 				x -= rect.m_left;
 				y -= rect.m_top;
-				return child->handle_mouse_up_msg(x, y);
+				return child->on_touch_up(x, y);
 			}
 			child = child->m_next_sibling;
 		}
 	}
-	c_wnd::handle_mouse_up_msg(x, y);
+	c_wnd::on_touch_up(x, y);
 }
 
 int c_dialog::set_me_the_dialog()
@@ -191,12 +186,4 @@ int c_dialog::set_me_the_dialog()
 	}
 	ASSERT(FALSE);
 	return -2;
-}
-
-void c_dialog::write_user_msg(short msg_id,short value)
-{
-	MSG_INFO MSG_INFO;
-	MSG_INFO.dwMsgId = msg_id;
-	MSG_INFO.dwParam1 = value;
-	write_usr_msg(&MSG_INFO);
 }

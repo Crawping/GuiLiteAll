@@ -47,7 +47,6 @@ int c_slide_group::set_active_slide(int index, bool is_redraw)
 		}
 		else
 		{
-			remove_child(m_slides[i]);
 			m_slides[i]->get_surface()->set_active(false);
 		}
 	}
@@ -176,7 +175,6 @@ void c_slide_group::disabel_all_slide()
 	{
 		if(m_slides[i])
 		{
-			remove_child(m_slides[i]);
 			m_slides[i]->get_surface()->set_active(false);
 		}
 	}

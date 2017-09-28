@@ -33,11 +33,11 @@ public:
 protected:
 	virtual c_wnd* clone(){return new c_spin_box();}
 	virtual void on_paint(void);
-	virtual void on_focus(unsigned int w_param);
+	virtual void on_focus();
 	virtual void on_kill_focus(void);
 	
-	virtual void handle_mouse_down_msg(int x, int y);
-	virtual void handle_mouse_up_msg(int x, int y);
+	virtual void on_touch_down(int x, int y);
+	virtual void on_touch_up(int x, int y);
 	virtual void pre_create_wnd();
 
 protected:

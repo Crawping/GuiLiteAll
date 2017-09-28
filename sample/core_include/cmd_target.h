@@ -70,7 +70,7 @@ public:
 	static int handle_usr_msg(unsigned int msgId, unsigned int wParam, unsigned int lParam);
 protected:
 	void load_cmd_msg(void);
-	const GLT_MSG_ENTRY* FindMessageMapEntry(const GLT_MSG_ENTRY *pEntry,
+	const GLT_MSG_ENTRY* FindMessageMapEntry(const GLT_MSG_ENTRY *pEntry, 
 		unsigned int msgType, unsigned short msgId, unsigned short ctrlId);
 private:
 	static GLT_MSG_ENTRY ms_usr_map_entries[USR_MSG_MAX];
@@ -87,6 +87,6 @@ typedef union
 	void (c_cmd_target::*func_vvl)(long l_param);
 	void (c_cmd_target::*func_vwl)(unsigned int w_param, long l_param);
 	int (c_cmd_target::*func_ivv)();
-}MSGFUNCS;
+}MSGFUNCS; 
 
 #endif

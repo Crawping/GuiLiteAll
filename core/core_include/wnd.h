@@ -96,21 +96,19 @@ public:
 	void get_wnd_rect(c_rect &rect) const;
 	void get_screen_rect(c_rect &rect) const;
 
-	c_wnd* set_focus(c_wnd *new_active_child, unsigned int w_param = 0);
+	c_wnd* set_focus(c_wnd *new_active_child);
 
-	void set_parent(c_wnd *parent);
 	c_wnd* get_parent(void) const { return m_parent; }
 	c_wnd* get_last_child(void) const;
+	int	unlink_child(c_wnd *child);
 	c_wnd* get_prev_sibling(void) const { return m_prev_sibling; }
 	c_wnd* get_next_sibling(void) const { return m_next_sibling; }
 
 	void notify_parent(unsigned short msg_id, unsigned int w_param, long l_param);
 	virtual int	on_notify(unsigned short notify_code, unsigned short ctrl_id, long l_param);
-	virtual c_wnd* get_next_focus_child(c_wnd *start_child, unsigned int w_param);
 
-	virtual void handle_mouse_up_msg(int x, int y);
-	virtual void handle_mouse_down_msg(int x, int y);
-	virtual c_wnd*	on_move_focus(unsigned int w_param);
+	virtual void on_touch_up(int x, int y);
+	virtual void on_touch_down(int x, int y);
 
 	c_wnd* get_active_child(void) const { return m_active_child; }
 
@@ -125,7 +123,6 @@ protected:
 	void hide_widow(void);
 	void add_child_2_head(c_wnd *child);
 	void add_child_2_tail(c_wnd *child);
-	int	 remove_child(c_wnd *child);
 
 	void wnd2screen(int &x, int &y) const;
 	void wnd2screen(c_rect &rect) const;
@@ -136,7 +133,7 @@ protected:
 	int load_clone_child_wnd(WND_TREE *p_child_tree);
 	void set_active_child(c_wnd* child) { m_active_child = child; }
 
-	virtual void on_focus(unsigned int w_param);
+	virtual void on_focus(void);
 	virtual void on_kill_focus(void);
 
 	void set_pixel(int x, int y, unsigned int rgb);
