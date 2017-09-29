@@ -52,15 +52,15 @@ public:
 	c_wnd(void);
 	virtual ~c_wnd(void);
 	virtual const char* get_class_name(void) const { return "c_wnd"; }
-	virtual int create(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
+	virtual int assemble(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
 		short x, short y, short width, short height, WND_TREE* p_child_tree = NULL);
-	virtual c_wnd* create_clone(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
+	virtual c_wnd* assemble_clone(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
 		short x, short y, short width, short height, WND_TREE* p_child_tree = NULL);
+	void disassemble(void);
 	virtual c_wnd* clone() = 0;
 	virtual void on_init_children(void) {}
 	virtual void on_paint(void) {}
 	void show_window(int show_type = GLT_WIN_SHOW);
-	void exit_wnd(void);
 
 	unsigned short get_id(void) const { return m_resource_id; }
 	int get_z_order(void) { return m_z_order; }

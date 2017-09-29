@@ -150,11 +150,11 @@ int c_keyboard::create(c_wnd *parent, unsigned short resource_id, unsigned short
 {
 	if (m_style == STYLE_ALL_BOARD)
 	{
-		return c_wnd::create(parent, resource_id, str_id, (0 - x), (height - y - KEYBOARD_HEIGHT), KEYBOARD_WIDTH, KEYBOARD_HEIGHT, g_key_board_children);
+		return c_wnd::assemble(parent, resource_id, str_id, (0 - x), (height - y - KEYBOARD_HEIGHT), KEYBOARD_WIDTH, KEYBOARD_HEIGHT, g_key_board_children);
 	}
 	else if(m_style == STYLE_NUM_BOARD)
 	{
-		return c_wnd::create(parent, resource_id, str_id, x, y, NUM_BOARD_WIDTH, NUM_BOARD_HEIGHT, g_number_board_children);
+		return c_wnd::assemble(parent, resource_id, str_id, x, y, NUM_BOARD_WIDTH, NUM_BOARD_HEIGHT, g_number_board_children);
 	}
 	else
 	{

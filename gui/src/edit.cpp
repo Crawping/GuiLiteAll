@@ -126,7 +126,7 @@ void c_edit::on_paint(void)
 	case STATUS_FOCUSED:
 		if (m_z_order > m_parent->get_z_order())
 		{
-			s_keyboard.exit_wnd();
+			s_keyboard.disassemble();
 			m_surface->set_frame_layer(empty_rect, s_keyboard.get_z_order());
 			m_z_order = m_parent->get_z_order();
 		}
@@ -136,7 +136,7 @@ void c_edit::on_paint(void)
 	case STATUS_NORMAL:
 		if (m_z_order > m_parent->get_z_order())
 		{
-			s_keyboard.exit_wnd();
+			s_keyboard.disassemble();
 			m_surface->set_frame_layer(empty_rect, s_keyboard.get_z_order());
 			m_z_order = m_parent->get_z_order();
 		}

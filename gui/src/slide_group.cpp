@@ -73,7 +73,7 @@ int c_slide_group::add_slide(c_wnd* slide, unsigned short resource_id, short x, 
 	c_surface* new_surface = old_surface->get_display()->create_surface(slide,max_zorder);
 	new_surface->set_active(false);
 	set_surface(new_surface);
-	slide->create(this, resource_id ,0 , x, y, width, height, p_child_tree);
+	slide->assemble(this, resource_id ,0 , x, y, width, height, p_child_tree);
 
 	c_rect rect_this, rect_page;
 	get_screen_rect(rect_this);
@@ -127,7 +127,7 @@ int c_slide_group::add_clone_silde(c_wnd* slide, unsigned short resource_id, sho
 	c_surface* new_surface = old_surface->get_display()->create_surface(slide,max_zorder);
 	new_surface->set_active(false);
 	set_surface(new_surface);
-	c_wnd* page_tmp = slide->create_clone(this,resource_id,0,x,y,width,height,p_child_tree);
+	c_wnd* page_tmp = slide->assemble_clone(this,resource_id,0,x,y,width,height,p_child_tree);
 
 	c_rect rect_this, rect_page;
 	get_screen_rect(rect_this);

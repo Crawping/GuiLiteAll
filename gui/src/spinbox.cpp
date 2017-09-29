@@ -127,13 +127,13 @@ void c_spin_box::show_arrow_button(void)
 	
 	fill_rect(m_bt_arrow_up_rect.m_left, m_bt_arrow_up_rect.m_top, m_bt_arrow_down_rect.m_right, m_bt_arrow_down_rect.m_bottom, GLT_RGB(99,108,124));
 
-	m_bt_arrow_up.create(this, ID_BT_ARROW_UP, 0, 0, m_wnd_rect.Height(), m_bt_arrow_up_rect.Width(),m_bt_arrow_up_rect.Height());
+	m_bt_arrow_up.assemble(this, ID_BT_ARROW_UP, 0, 0, m_wnd_rect.Height(), m_bt_arrow_up_rect.Width(),m_bt_arrow_up_rect.Height());
 	m_bt_arrow_up.set_bitmap(&bmspin_up_button_normal);
 	m_bt_arrow_up.set_focus_bitmap(&bmspin_up_button_focus);
 	m_bt_arrow_up.set_pushed_bitmap(&bmspin_up_button_focus);		
 	m_bt_arrow_up.show_window();
 
-	m_bt_arrow_down.create(this, ID_BT_ARROW_DOWN, 0, m_bt_arrow_up_rect.Width(), m_wnd_rect.Height(), m_bt_arrow_down_rect.Width(),m_bt_arrow_down_rect.Height());
+	m_bt_arrow_down.assemble(this, ID_BT_ARROW_DOWN, 0, m_bt_arrow_up_rect.Width(), m_wnd_rect.Height(), m_bt_arrow_down_rect.Width(),m_bt_arrow_down_rect.Height());
 	m_bt_arrow_down.set_bitmap(&bmspin_down_button_normal);
 	m_bt_arrow_down.set_focus_bitmap(&bmspin_down_button_focus);
 	m_bt_arrow_down.set_pushed_bitmap(&bmspin_down_button_focus);		
@@ -142,8 +142,8 @@ void c_spin_box::show_arrow_button(void)
 
 void c_spin_box::hide_arrow_button(void)
 {
-	m_bt_arrow_up.exit_wnd();
-	m_bt_arrow_down.exit_wnd();
+	m_bt_arrow_up.disassemble();
+	m_bt_arrow_down.disassemble();
 }
 
 void c_spin_box::on_paint(void)
