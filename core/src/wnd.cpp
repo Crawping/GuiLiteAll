@@ -23,7 +23,7 @@ void c_wnd::pre_create_wnd()
 	m_style = GLT_ATTR_VISIBLE | GLT_ATTR_FOCUS;
 }
 
-int c_wnd::assemble(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
+int c_wnd::connect(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
 		   short x, short y, short width, short height, WND_TREE* p_child_tree )
 {
 	if(0 == resource_id)
@@ -91,7 +91,7 @@ int c_wnd::load_child_wnd(WND_TREE *p_child_tree)
 		}
 		else
 		{
-			p_cur->p_wnd->assemble(this, p_cur->resource_id, p_cur->caption_id,
+			p_cur->p_wnd->connect(this, p_cur->resource_id, p_cur->caption_id,
 				p_cur->x, p_cur->y, p_cur->width, p_cur->height,p_cur->p_child_tree);
 		}
 		p_cur++;
@@ -100,7 +100,7 @@ int c_wnd::load_child_wnd(WND_TREE *p_child_tree)
 	return sum;
 }
 
-c_wnd* c_wnd::assemble_clone(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
+c_wnd* c_wnd::connect_clone(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
 		   short x, short y, short width, short height, WND_TREE* p_child_tree )
 {
 	if(0 == resource_id)
@@ -173,7 +173,7 @@ int c_wnd::load_clone_child_wnd(WND_TREE *p_child_tree)
 		}
 		else
 		{
-			p_cur->p_wnd->assemble_clone(this, p_cur->resource_id, p_cur->caption_id,
+			p_cur->p_wnd->connect_clone(this, p_cur->resource_id, p_cur->caption_id,
 				p_cur->x, p_cur->y, p_cur->width, p_cur->height,p_cur->p_child_tree);
 		}
 		p_cur++;
@@ -182,7 +182,7 @@ int c_wnd::load_clone_child_wnd(WND_TREE *p_child_tree)
 	return sum;
 }
 
-void c_wnd::disassemble(void)
+void c_wnd::disconnect(void)
 {
 	if (0 == m_resource_id)
 	{
@@ -197,7 +197,7 @@ void c_wnd::disassemble(void)
 		while (child)
 		{
 			next_child = child->m_next_sibling;
-			child->disassemble();
+			child->disconnect();
 			child = next_child;
 		}
 	}

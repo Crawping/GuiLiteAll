@@ -52,11 +52,11 @@ public:
 	c_wnd(void);
 	virtual ~c_wnd(void);
 	virtual const char* get_class_name(void) const { return "c_wnd"; }
-	virtual int assemble(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
+	virtual int connect(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
 		short x, short y, short width, short height, WND_TREE* p_child_tree = NULL);
-	virtual c_wnd* assemble_clone(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
+	virtual c_wnd* connect_clone(c_wnd *parent, unsigned short resource_id, unsigned short str_id,
 		short x, short y, short width, short height, WND_TREE* p_child_tree = NULL);
-	void disassemble(void);
+	void disconnect(void);
 	virtual c_wnd* clone() = 0;
 	virtual void on_init_children(void) {}
 	virtual void on_paint(void) {}
