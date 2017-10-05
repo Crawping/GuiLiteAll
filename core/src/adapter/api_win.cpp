@@ -47,7 +47,7 @@ DWORD WINAPI timer_routine(LPVOID lpParam)
     return NULL;
 }
 
-static int init_mul_timer(void)
+static int init_mul_timer()
 {
 	static bool s_is_init = false;
 	if(s_is_init == true)
@@ -150,12 +150,12 @@ void start_real_timer(void (*func)(void* arg))
 	}
 }
 
-long int get_tick(void)
+long int get_tick()
 {
 	return GetTickCount64();
 }
 
-unsigned int get_current_task_id(void)
+unsigned int get_current_task_id()
 {
 	return GetCurrentThreadId();
 }
@@ -165,12 +165,12 @@ void register_timer(int milli_second,void func(void* ptmr, void* parg))
 	set_a_timer(milli_second/TIMER_UNIT,func);
 }
 
-long get_time_in_second(void)
+long get_time_in_second()
 {
 	return time(NULL);
 }
 
-T_TIME get_time(void)
+T_TIME get_time()
 {
 	T_TIME ret = {0};
 	

@@ -21,7 +21,7 @@ void c_list_box::pre_create_wnd()
 	m_item_total = 0;
 }
 
-void c_list_box::on_init_children(void)
+void c_list_box::on_init_children()
 {
 	m_item_total = 0;
 	m_selected_item = 0;	
@@ -36,13 +36,13 @@ void c_list_box::on_focus()
 	on_paint();
 }
 
-void c_list_box::on_kill_focus(void)
+void c_list_box::on_kill_focus()
 {
 	modify_status(STATUS_NORMAL);
 	on_paint();
 }
 
-void c_list_box::on_paint(void)
+void c_list_box::on_paint()
 {
 	c_rect rect, empty_rect;
 	get_screen_rect(rect);
@@ -220,7 +220,7 @@ int c_list_box::add_item(unsigned short str_id)
 	return 0;
 }
 
-void c_list_box::clear_item(void)
+void c_list_box::clear_item()
 {
 	m_selected_item = m_item_total = 0;
 	memset(m_item_array, 0, sizeof(m_item_array));

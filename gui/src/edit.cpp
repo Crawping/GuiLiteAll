@@ -100,13 +100,13 @@ void c_edit::on_focus()
 	on_paint();
 }
 
-void c_edit::on_kill_focus(void)
+void c_edit::on_kill_focus()
 {
 	modify_status(STATUS_NORMAL);
 	on_paint();
 }
 
-void c_edit::on_paint(void)
+void c_edit::on_paint()
 {
 	c_rect rect;
 	get_screen_rect(rect);

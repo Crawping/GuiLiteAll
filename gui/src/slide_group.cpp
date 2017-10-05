@@ -53,7 +53,7 @@ int c_slide_group::set_active_slide(int index, bool is_redraw)
 	return 0;
 }
 
-void c_slide_group::display_window(void)
+void c_slide_group::display_window()
 {
 	if (GLT_ATTR_VISIBLE == (m_style & GLT_ATTR_VISIBLE))
 	{

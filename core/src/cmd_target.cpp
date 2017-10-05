@@ -16,11 +16,11 @@ const GLT_MSG_ENTRY c_cmd_target::mMsgMapEntries[] =
 {
 	GLT_END_MESSAGE_MAP()
 
-c_cmd_target::c_cmd_target(void)
+c_cmd_target::c_cmd_target()
 {
 }
 
-c_cmd_target::~c_cmd_target(void)
+c_cmd_target::~c_cmd_target()
 {
 }
 
@@ -41,7 +41,7 @@ int c_cmd_target::handle_usr_msg(unsigned int msgId, unsigned int wParam, unsign
 	return 1;
 }
 
-void c_cmd_target::load_cmd_msg(void)
+void c_cmd_target::load_cmd_msg()
 {
 	const GLT_MSG_ENTRY* p_entry = GetMessageMap()->msgMapEntry;
 	if (0 == p_entry)

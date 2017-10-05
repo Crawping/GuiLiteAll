@@ -21,7 +21,7 @@ void c_dialog::pre_create_wnd()
 	m_bg_color = GLT_RGB(33,33,33);
 }
 
-void c_dialog::on_paint(void)
+void c_dialog::on_paint()
 {
 	c_rect rect;
 	get_screen_rect(rect);

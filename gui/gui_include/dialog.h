@@ -25,7 +25,7 @@ public:
 protected:
 	virtual const char* get_class_name(void) const {return "c_dialog";}
 	virtual void pre_create_wnd();
-	virtual void on_paint(void);
+	virtual void on_paint();
 	static DIALOG_ARRAY ms_the_dialogs[MAX_DIALOG];
 private:
 	int set_me_the_dialog();

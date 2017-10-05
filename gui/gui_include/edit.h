@@ -10,15 +10,15 @@ class c_edit : public c_wnd
 	friend class c_keyboard;
 public:
 	virtual c_wnd* clone(){return new c_edit();}
-	virtual const char* get_class_name(void) const {return "c_edit";}
-	const char* get_text(void){return m_str;}
+	virtual const char* get_class_name() const {return "c_edit";}
+	const char* get_text(){return m_str;}
 	void set_text(const char* str);
 	
 protected:
 	virtual void pre_create_wnd();
-	virtual void on_paint(void);
+	virtual void on_paint();
 	virtual void on_focus();
-	virtual void on_kill_focus(void);
+	virtual void on_kill_focus();
 	virtual void on_touch_down(int x, int y);
 	virtual void on_touch_up(int x, int y);
 	

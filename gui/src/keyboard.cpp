@@ -224,7 +224,7 @@ InputChar:
 	notify_parent(KEYBORAD_CLICK, get_id(), CLICK_CHAR);
 }
 
-void c_keyboard_button::on_paint(void)
+void c_keyboard_button::on_paint()
 {
 	c_rect rect;
 	get_screen_rect(rect);

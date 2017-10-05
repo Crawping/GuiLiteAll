@@ -111,14 +111,14 @@ void c_spin_box::on_focus()
 	on_paint();
 }
 
-void c_spin_box::on_kill_focus(void)
+void c_spin_box::on_kill_focus()
 {
 	m_cur_value = m_value;
 	modify_status(STATUS_NORMAL);
 	on_paint();
 }
 
-void c_spin_box::show_arrow_button(void)
+void c_spin_box::show_arrow_button()
 {
 	extern const GUI_BITMAP bmspin_up_button_normal;
 	extern const GUI_BITMAP bmspin_up_button_focus;
@@ -140,13 +140,13 @@ void c_spin_box::show_arrow_button(void)
 	m_bt_arrow_down.show_window();
 }
 
-void c_spin_box::hide_arrow_button(void)
+void c_spin_box::hide_arrow_button()
 {
 	m_bt_arrow_up.disconnect();
 	m_bt_arrow_down.disconnect();
 }
 
-void c_spin_box::on_paint(void)
+void c_spin_box::on_paint()
 {
 	c_rect rect,tmp_rect;
 	get_screen_rect(rect);

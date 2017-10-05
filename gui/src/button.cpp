@@ -25,7 +25,7 @@ void c_button::on_focus()
 	on_paint();
 }
 
-void c_button::on_kill_focus(void)
+void c_button::on_kill_focus()
 {
 	modify_status(STATUS_NORMAL);
 	on_paint();
@@ -49,7 +49,7 @@ void c_button::on_touch_up(int x, int y)
 	}
 }
 
-void c_button::on_paint(void)
+void c_button::on_paint()
 {
 	c_rect rect;
 	get_screen_rect(rect);

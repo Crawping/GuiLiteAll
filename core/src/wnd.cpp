@@ -6,7 +6,7 @@
 #include "../core_include/surface.h"
 #include "../core_include/wnd.h"
 
-c_wnd::c_wnd(void): m_status(STATUS_NORMAL), m_style(GLT_ATTR_VISIBLE), m_parent(NULL), m_top_child(NULL), m_prev_sibling(NULL), m_next_sibling(NULL),
+c_wnd::c_wnd(): m_status(STATUS_NORMAL), m_style(GLT_ATTR_VISIBLE), m_parent(NULL), m_top_child(NULL), m_prev_sibling(NULL), m_next_sibling(NULL),
 	m_str_id(0),m_bitmap(NULL), m_bitmap_focus(NULL), m_bitmap_pushed(NULL), m_bitmap_disable(NULL),
 	m_font_type(NULL), m_font_color(0), m_bg_color(0), m_is_visible_now(false),m_resource_id(0),
 	m_z_order(Z_ORDER_LEVEL_0),	m_active_child(NULL), m_surface(NULL)
@@ -14,7 +14,7 @@ c_wnd::c_wnd(void): m_status(STATUS_NORMAL), m_style(GLT_ATTR_VISIBLE), m_parent
 	m_wnd_rect.Empty();
 }
 
-c_wnd:: ~c_wnd(void)
+c_wnd:: ~c_wnd()
 {
 }
 
@@ -182,7 +182,7 @@ int c_wnd::load_clone_child_wnd(WND_TREE *p_child_tree)
 	return sum;
 }
 
-void c_wnd::disconnect(void)
+void c_wnd::disconnect()
 {
 	if (0 == m_resource_id)
 	{
@@ -246,7 +246,7 @@ void c_wnd::modify_style(unsigned int add_style, unsigned int remove_style)
 	}
 }
 
-bool c_wnd::is_foreground(void)
+bool c_wnd::is_foreground()
 {
 	return (m_surface->is_active() && m_is_visible_now);
 }
@@ -301,7 +301,7 @@ void c_wnd::enable_wnd(int enable)
 	}
 }
 
-int c_wnd::is_wnd_enable(void) const
+int c_wnd::is_wnd_enable() const
 {
 	if ( GLT_ATTR_DISABLED == (m_style & GLT_ATTR_DISABLED) )
 	{
@@ -326,7 +326,7 @@ void c_wnd::enable_focus(int enable)
 	return;
 }
 
-int c_wnd::is_focus_wnd(void) const
+int c_wnd::is_focus_wnd() const
 {
 	if ( (m_style & GLT_ATTR_VISIBLE)
 		&& !(m_style & GLT_ATTR_DISABLED)
@@ -341,7 +341,7 @@ int c_wnd::is_focus_wnd(void) const
 	}
 }
 
-const int c_wnd::is_active_wnd(void) const
+const int c_wnd::is_active_wnd() const
 {
 	if(!m_parent)
 	{
@@ -450,7 +450,7 @@ void c_wnd::on_focus()
 	}
 }
 
-void c_wnd::on_kill_focus(void)
+void c_wnd::on_kill_focus()
 {
 	if (m_active_child)
 	{
@@ -567,7 +567,7 @@ void c_wnd::add_child_2_tail(c_wnd *child)
 	}
 }
 
-c_wnd* c_wnd::get_last_child(void) const
+c_wnd* c_wnd::get_last_child() const
 {
 	if ( NULL == m_top_child )
 	{
@@ -647,7 +647,7 @@ int	c_wnd::unlink_child(c_wnd *child)
 	}
 }
 
-void c_wnd::display_window(void)
+void c_wnd::display_window()
 {
 	if (GLT_ATTR_VISIBLE == (m_style & GLT_ATTR_VISIBLE))
 	{
@@ -666,7 +666,7 @@ void c_wnd::display_window(void)
 	}
 }
 
-void c_wnd::hide_widow(void)
+void c_wnd::hide_widow()
 {
 	c_wnd *child = m_top_child;
 
