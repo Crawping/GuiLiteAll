@@ -148,9 +148,7 @@
     <ClCompile Include="src\alarm_queue.cpp" />
     <ClCompile Include="src\bitmap.cpp" />
     <ClCompile Include="src\cmd_target.cpp" />
-    <ClCompile Include="src\database.cpp" />
     <ClCompile Include="src\display.cpp" />
-    <ClCompile Include="src\sqlite3-win-store.c" />
     <ClCompile Include="src\surface.cpp" />
     <ClCompile Include="src\rect.cpp" />
     <ClCompile Include="src\rgb.cpp" />
@@ -165,7 +163,6 @@
     <ClInclude Include="core_include\audio.h" />
     <ClInclude Include="core_include\bitmap.h" />
     <ClInclude Include="core_include\cmd_target.h" />
-    <ClInclude Include="core_include\database.h" />
     <ClInclude Include="core_include\display.h" />
     <ClInclude Include="core_include\surface.h" />
     <ClInclude Include="core_include\msg.h" />
@@ -175,7 +172,6 @@
     <ClInclude Include="core_include\wave_ctrl.h" />
     <ClInclude Include="core_include\wnd.h" />
     <ClInclude Include="core_include\word.h" />
-    <ClInclude Include="extern_include\sqlite3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

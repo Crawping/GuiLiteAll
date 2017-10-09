@@ -32,9 +32,6 @@
     <ClInclude Include="core_include\cmd_target.h">
       <Filter>Header Files\core_include</Filter>
     </ClInclude>
-    <ClInclude Include="core_include\database.h">
-      <Filter>Header Files\core_include</Filter>
-    </ClInclude>
     <ClInclude Include="core_include\msg.h">
       <Filter>Header Files\core_include</Filter>
     </ClInclude>

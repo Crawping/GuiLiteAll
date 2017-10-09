@@ -12,9 +12,6 @@
     <Filter Include="Header Files\core_include">
       <UniqueIdentifier>{3a033a7f-d656-4871-b7fe-f0a16aca7c8d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\extern_include">
-      <UniqueIdentifier>{434897c7-3227-41b6-a179-1c42b2544c52}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\alarm_queue.cpp">
@@ -56,12 +53,6 @@
     <ClCompile Include="src\surface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\database.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sqlite3-win-store.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\display.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -80,9 +71,6 @@
       <Filter>Header Files\core_include</Filter>
     </ClInclude>
     <ClInclude Include="core_include\cmd_target.h">
-      <Filter>Header Files\core_include</Filter>
-    </ClInclude>
-    <ClInclude Include="core_include\database.h">
       <Filter>Header Files\core_include</Filter>
     </ClInclude>
     <ClInclude Include="core_include\msg.h">
@@ -105,9 +93,6 @@
     </ClInclude>
     <ClInclude Include="core_include\word.h">
       <Filter>Header Files\core_include</Filter>
-    </ClInclude>
-    <ClInclude Include="extern_include\sqlite3.h">
-      <Filter>Header Files\extern_include</Filter>
     </ClInclude>
     <ClInclude Include="core_include\surface.h">
       <Filter>Header Files\core_include</Filter>

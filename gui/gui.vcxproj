@@ -153,7 +153,6 @@
     <ClInclude Include="core_include\audio.h" />
     <ClInclude Include="core_include\bitmap.h" />
     <ClInclude Include="core_include\cmd_target.h" />
-    <ClInclude Include="core_include\database.h" />
     <ClInclude Include="core_include\surface.h" />
     <ClInclude Include="core_include\msg.h" />
     <ClInclude Include="core_include\rect.h" />
