@@ -262,23 +262,6 @@ void thread_sleep(unsigned int milli_seconds)
 	Sleep(milli_seconds);
 }
 
-int get_std_input(char *buffer, int size)
-{
-	if (!fgets(buffer, (int)size - 1, stdin))
-	{//	Will failed in UWP.
-		Sleep(10000);
-		log_out("Warning: fgets() failed!\n");
-		return -1;
-	}
-
-	int len = (int)strlen(buffer) - 1;
-	if (buffer[len] == '\n')
-	{
-		buffer[len] = '\0';
-	}
-	return len;
-}
-
 #pragma pack(push,1)
 typedef struct {
 	unsigned short	bfType;
