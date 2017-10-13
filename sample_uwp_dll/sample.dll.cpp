@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include "sample.dll.h"
+#include <assert.h>
 
 using namespace SampleUwpDll;
 using namespace concurrency;
@@ -39,6 +40,7 @@ void SampleUwpNative::getFrameBuffer(Platform::WriteOnlyArray<byte>^ data)
 
 int SampleUwpNative::inputWavBuffer(const Platform::Array<byte>^ data, int sampleRate)
 {
+	return 0;
 }
 
 void SampleUwpNative::onClickDown(int x, int y)
@@ -55,4 +57,14 @@ void SampleUwpNative::onClickUp(int x, int y)
 	msg.dwMsgId = 0x4600;
 	msg.dwParam1 = x | (y << 16);
 	send_hid_msg(&msg, sizeof(msg), 0);
+}
+
+void do_assert(const char* file, int line)
+{
+	assert(false);
+}
+
+void log_out(const char* log)
+{
+	OutputDebugStringA(log);
 }
