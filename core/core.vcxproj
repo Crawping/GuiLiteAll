@@ -145,7 +145,6 @@
     <ClCompile Include="src\adapter\api_win.cpp" />
     <ClCompile Include="src\adapter\audio_win.cpp" />
     <ClCompile Include="src\adapter\msg_win.cpp" />
-    <ClCompile Include="src\alarm_queue.cpp" />
     <ClCompile Include="src\bitmap.cpp" />
     <ClCompile Include="src\cmd_target.cpp" />
     <ClCompile Include="src\display.cpp" />
@@ -158,7 +157,6 @@
     <ClCompile Include="src\word.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core_include\alarm_queue.h" />
     <ClInclude Include="core_include\api.h" />
     <ClInclude Include="core_include\audio.h" />
     <ClInclude Include="core_include\bitmap.h" />
